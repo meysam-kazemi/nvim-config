@@ -88,3 +88,26 @@ for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua', [[v:val =
 end
 
 
+-- 1. Keymaps to cycle through buffers with gt and gT
+-- Although these are often defaults, we set them explicitly for clarity.
+vim.keymap.set('n', 'gt', '<Cmd>bnext<CR>', { desc = 'Go to Next Buffer', silent = true })
+vim.keymap.set('n', 'gT', '<Cmd>bprevious<CR>', { desc = 'Go to Previous Buffer', silent = true })
+
+-- 2. Keymaps to jump to a buffer by its order number (<leader>1, <leader>2, etc.)
+-- This maps <leader>1 to the 1st buffer in the :ls list, <leader>2 to the 2nd, and so on.
+for i = 1, 9 do
+  vim.keymap.set('n', '<leader>' .. i, function()
+    -- Get a table of all listed buffers, in the order they appear in `:ls`
+    local buflist = vim.fn.getbufinfo({ buflisted = 1 })
+
+    -- Check if a buffer exists at the requested position `i`
+    if buflist[i] and buflist[i].bufnr then
+      -- If it exists, switch to it using its actual buffer number (bufnr)
+      vim.cmd('buffer ' .. buflist[i].bufnr)
+    else
+      -- Optional: Notify the user if the buffer doesn't exist
+      print('Buffer ' .. i .. ' does not exist.')
+    end
+  end, { desc = 'Go to buffer ' .. i, silent = true })
+end
+
