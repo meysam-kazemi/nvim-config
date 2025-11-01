@@ -112,7 +112,6 @@ for i = 1, 9 do
 end
 
 
-vim.opt.clipboard = 'unnamedplus'  -- Use + register by default
 vim.g.clipboard = {
   name = 'OSC 52',
   copy = {
