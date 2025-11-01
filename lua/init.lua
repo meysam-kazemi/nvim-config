@@ -111,3 +111,16 @@ for i = 1, 9 do
   end, { desc = 'Go to buffer ' .. i, silent = true })
 end
 
+
+vim.opt.clipboard = 'unnamedplus'  -- Use + register by default
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
