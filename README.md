@@ -31,22 +31,22 @@ Run :checkhealth for more info
 Install `clang` and `clangd` ( See [docs](https://clangd.llvm.org/installation.html) ):  
 Note: change `14` with your desired version of `clang`
 ```bash
-$ sudo apt install clang-14 clangd-14
-$ sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-14 100
+sudo apt install clang-14 clangd-14
+sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-14 100
 ```
 
 ### rust-analyzer
 for `rust` support install [rust-analyzer](https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary):
 ```bash
-$ mkdir -p ~/.local/bin
-$ curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
-$ chmod +x ~/.local/bin/rust-analyzer
+mkdir -p ~/.local/bin
+curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
+chmod +x ~/.local/bin/rust-analyzer
 ```
 ### pyright
 for python support you need `pyright`
 first make sure you have `nodejs` and `npm` installed and then run:
 ```bash
-$ npm i -g pyright
+npm i -g pyright
 ```
 
 ### Other language servers
@@ -63,9 +63,9 @@ Use any plugin manager you like, I used [packer](https://github.com/wbthomason/p
  ### Copy Configurations
  Copy repo into `~/.config/nvim/` (THIS DELETES OLD `neovim` CONFIGURATIONS):
  ```bash
- $ rm -rf ~/.config/nvim/
- $ rm -rf ~/.local/share/nvim/
- $ git clone https://github.com/meysam-kazemi/nvim-config/ ~/.config/nvim/
+ rm -rf ~/.config/nvim/
+ rm -rf ~/.local/share/nvim/
+ git clone https://github.com/meysam-kazemi/nvim-config/ ~/.config/nvim/
  ```
 
  ### Install plugins
@@ -74,10 +74,10 @@ Use any plugin manager you like, I used [packer](https://github.com/wbthomason/p
 ### Fonts
 Install [Nerd-Fonts](https://github.com/ryanoasis/nerd-fonts#font-installation):
 ```bash
-$ cd ~
-$ git clone --depth 1 https://github.com/ryanoasis/nerd-fonts
-$ cd nerd-fonts
-$ ./install.sh
+cd ~
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts
+cd nerd-fonts
+./install.sh
 ```
 #### Configure terminal font
 - Goto your terminal's font configuration and select a **monospace** font from nerd-fonts installed fonts (e.g. Hack)
@@ -86,4 +86,4 @@ $ ./install.sh
 
 ## Keymaps
 
-Refer to: [Key Bindings](https://github.com/ariyan-eghbal/nvim-config/blob/master/keys.md)
+Refer to: [Key Bindings](https://github.com/meysam-kazemi/nvim-config/blob/master/keys.md)
