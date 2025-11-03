@@ -93,5 +93,7 @@
 | Normal | <kbd>C-p</kbd> | Toggle Markdown Preview |
 | Normal | <kbd>\<leader\>ct</kbd> | Toggle Tagbar |
 | Normal | <kbd>\<leader\>a</kbd> | Toggle Aerial |
-
+| Normal, Visual | cmm | Commentary |
+| Normal | gt | Next Buffer |
+| Normal | gT | Previous Buffer |
 
