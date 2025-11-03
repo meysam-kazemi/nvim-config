@@ -1,5 +1,5 @@
-
 require('packer').startup(function()
+  use 'tpope/vim-commentary'
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
   
@@ -87,6 +87,10 @@ for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua', [[v:val =
     require(file:gsub('%.lua$', ''))
 end
 
+-- vim-commentary
+-- Ctrl-/ = comment toggle (works in normal & visual mode)
+vim.keymap.set('v', 'cmm', '<Plug>Commentary', { desc = 'Toggle comment' })
+vim.keymap.set('n', 'cmm', '<Plug>CommentaryLine', { desc = 'Comment line' })
 
 -- 1. Keymaps to cycle through buffers with gt and gT
 -- Although these are often defaults, we set them explicitly for clarity.
